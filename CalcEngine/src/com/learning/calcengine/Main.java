@@ -12,6 +12,72 @@ public class Main {
         factorial(3);
         factorial(7);
 
+        sumIntArrayOfFive(1 ,2 , 3, 4, 5);
+
+        calcEngineWithArrays();
+
+        }
+
+        public static void calcEngineWithArrays() {
+
+            double[] leftVals = {10.0d, 4.0d, 125.0d, 33.0d};
+            double[] rightVals = {3.0d, 69.0d, 666.0d, 10.0d};
+            char[] opCodes = {'+', '-', '*', '/'};
+            double[] results = new double[opCodes.length];
+
+            for (int i = 0; i < opCodes.length; i++) {
+
+                switch (opCodes[i]) {
+                    case '+':
+                        results[i] = leftVals[i] + rightVals[i];
+                        break;
+                    case '-':
+                        results[i] = leftVals[i] - rightVals[i];
+                        break;
+                    case '*':
+                        results[i] = leftVals[i] * rightVals[i];
+                        break;
+                    case '/':
+                        if (rightVals[i] != 0) {
+                            results[i] = leftVals[i] / rightVals[i];
+                        } else {
+                            System.out.println("Cannot divide by zero.");
+                        }
+                        break;
+                    default:
+                        System.out.println("Invalid opCode. Try again.");
+                        results[i] = 0.00d;
+                        break;
+                }
+
+            }
+
+            for (double result : results) {
+
+                System.out.println("Result: " + result);
+
+            }
+
+
+
+        }
+
+        public static void sumIntArrayOfFive(int valueOne,
+                                             int valueTwo,
+                                             int valueThree,
+                                             int valueFour,
+                                             int valueFive) {
+
+            int[] nums = new int[] {valueOne, valueTwo, valueThree, valueFour, valueFive};
+
+            int result = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+                result += nums[i];
+            }
+
+            System.out.println("Result: " + result);
+
         }
 
         public static void factorial(int valueOne) {
@@ -55,7 +121,7 @@ public class Main {
                     System.out.println("Invalid opCode. Try again.");
                     result = 0.00d;
                     break;
-        }
+            }
 
         System.out.println("Result: " + result);
 
