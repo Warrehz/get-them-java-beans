@@ -16,6 +16,12 @@ public class Main {
 
         calcEngineWithArrays();
 
+        System.out.println("Result: " + numTimesFive(100));
+
+        }
+
+        public static int numTimesFive(int valueOne) {
+            return valueOne * 5;
         }
 
         public static void calcEngineWithArrays() {
@@ -58,8 +64,6 @@ public class Main {
 
             }
 
-
-
         }
 
         public static void sumIntArrayOfFive(int valueOne,
@@ -72,8 +76,8 @@ public class Main {
 
             int result = 0;
 
-            for (int i = 0; i < nums.length; i++) {
-                result += nums[i];
+            for (int num : nums) {
+                result += num;
             }
 
             System.out.println("Result: " + result);
@@ -98,9 +102,8 @@ public class Main {
         public static void calcEngine(double valueOne, char operator, double valueTwo) {
 
             double result = 0.00d;
-            char opCode = operator;
 
-            switch (opCode) {
+            switch (operator) {
                 case 'a':
                     result = valueOne + valueTwo;
                     break;
