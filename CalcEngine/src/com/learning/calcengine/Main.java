@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        calcEngine(2.00, 'a', 6.54);
-        calcEngine(1, 's', 1);
-        calcEngine(19837, 'm', 32);
-        calcEngine(15, 'd', 3);
+        System.out.println("Result: " + calcEngine(2.00, 'a', 6.54));
+        System.out.println("Result: " + calcEngine(1, 's', 1));
+        System.out.println("Result: " + calcEngine(19837, 'm', 32));
+        System.out.println("Result: " + calcEngine(15, 'd', 3));
 
         factorial(3);
         factorial(7);
@@ -99,7 +99,7 @@ public class Main {
 
         }
 
-        public static void calcEngine(double valueOne, char operator, double valueTwo) {
+        public static double calcEngine(double valueOne, char operator, double valueTwo) {
 
             double result = 0.00d;
 
@@ -126,7 +126,7 @@ public class Main {
                     break;
             }
 
-        System.out.println("Result: " + result);
+        return result;
 
         /*if (opCode == 'a') {
             result = valueOne + valueTwo;
