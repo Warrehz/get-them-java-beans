@@ -18,11 +18,36 @@ public class Main {
 
     public static void performOperation(String[] parts) {
         char opCode = opCodeFromString(parts[0]);
+        char symbol = symbolFromOpCode(opCode);
         double leftVal = valueFromWord(parts[1]);
         double rightVal = valueFromWord(parts[2]);
         double result = execute(opCode, leftVal, rightVal);
-        System.out.println(result);
+        displayResult(leftVal, symbol, rightVal, result);
+    }
 
+    private static void displayResult(double leftVal, char symbol, double rightVal, double result) {
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(leftVal + " " + symbol + " " + rightVal + " = " + result);
+
+        System.out.println(sb.toString());
+
+    }
+
+    public static char symbolFromOpCode(char opCode) {
+        char[] opCodes = {'a', 's', 'm', 'd'};
+        char[] symbols = {'+', '-', '*', '/'};
+        char symbol = ' ';
+
+        for (int index = 0; index < opCodes.length; index++) {
+            if (opCode == opCodes[index]) {
+                symbol = symbols[index];
+                break;
+            }
+        }
+
+        return symbol;
     }
 
     public static double execute(char opCode, double leftVal, double rightVal) {
