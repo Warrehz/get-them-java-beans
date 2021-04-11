@@ -29,12 +29,7 @@ public class Main {
                         System.out.println("Cannot divide by zero.");
                     }
                     break;
-
             }
-
         }
-
-
-
     }
 }
