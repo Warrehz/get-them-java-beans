@@ -6,6 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
         executeInteractively();
+
+        // formatting example
+        int valueOne = 123;
+        int valueTwo = 9872;
+        int valueThree = 26;
+        int valueFour = 5;
+        String s1 = String.format("A:%d, B:%d", valueOne, valueFour);
+        String s2 = String.format("C:%d, D:%d", valueTwo, valueThree);
+        System.out.println();
+        System.out.println(s1);
+        System.out.println(s2);
+        String s3 = String.format("A:%5d, B:%5d", valueOne, valueFour);
+        String s4 = String.format("C:%5d, D:%5d", valueTwo, valueThree);
+        System.out.println();
+        System.out.println(s3);
+        System.out.println(s4);
+        String s5 = String.format("A:%05d, B:%05d", valueOne, valueFour);
+        String s6 = String.format("C:%05d, D:%05d", valueTwo, valueThree);
+        System.out.println();
+        System.out.println(s5);
+        System.out.println(s6);
     }
 
     static void executeInteractively() {
@@ -27,11 +48,11 @@ public class Main {
 
     private static void displayResult(double leftVal, char symbol, double rightVal, double result) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder string = new StringBuilder();
 
-        sb.append(leftVal + " " + symbol + " " + rightVal + " = " + result);
+        string.append(leftVal + " " + symbol + " " + rightVal + " = " + result);
 
-        System.out.println(sb.toString());
+        System.out.println(string.toString());
 
     }
 
