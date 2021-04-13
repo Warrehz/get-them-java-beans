@@ -48,11 +48,12 @@ public class Main {
 
     private static void displayResult(double leftVal, char symbol, double rightVal, double result) {
 
-        StringBuilder string = new StringBuilder();
-
+        /* StringBuilder string = new StringBuilder();
         string.append(leftVal + " " + symbol + " " + rightVal + " = " + result);
+        System.out.println(string.toString()); */
 
-        System.out.println(string.toString());
+        String output = String.format("%.3f %c %.3f = %.3f", leftVal, symbol, rightVal, result);
+        System.out.println(output);
 
     }
 
