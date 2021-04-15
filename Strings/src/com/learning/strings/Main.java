@@ -41,6 +41,12 @@ public class Main {
     public static void performOperation(String[] parts) {
         char opCode = opCodeFromString(parts[0]);
 
+        MathEquation[] equations = new MathEquation[4];
+        equations[0] = create(10.0d, 5.0d, 'a');
+        equations[0] = create(33.0d, 55.0d, 's');
+        equations[0] = create(1.0d, 5.0d, 'd');
+        equations[0] = create(123.0d, 874.0d, 'm');
+
         if (opCode == 'w') {
             handleWhen(parts);
         } else {
@@ -50,6 +56,14 @@ public class Main {
             double result = execute(opCode, leftVal, rightVal);
             displayResult(leftVal, symbol, rightVal, result);
         }
+    }
+
+    private static MathEquation create(double leftVal, double rightVal, char opCode) {
+        MathEquation equation = new MathEquation();
+        equation.leftVal = leftVal;
+        equation.rightVal = rightVal;
+        equation.opCode = opCode;
+        return equation;
     }
 
     private static void handleWhen(String[] parts) {
