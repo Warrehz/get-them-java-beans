@@ -1,12 +1,11 @@
 package com.learning.strings;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        executeInteractively();
+        // executeInteractively();
 
         // formatting example
         int valueOne = 123;
@@ -28,6 +27,11 @@ public class Main {
         System.out.println();
         System.out.println(s5);
         System.out.println(s6);
+        System.out.println();
+
+        // example using array of custom class type
+        performOperation();
+
     }
 
     static void executeInteractively() {
@@ -35,27 +39,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] parts = userInput.split(" ");
-        performOperation(parts);
     }
 
-    public static void performOperation(String[] parts) {
-        char opCode = opCodeFromString(parts[0]);
+    public static void performOperation() {
 
         MathEquation[] equations = new MathEquation[4];
         equations[0] = create(10.0d, 5.0d, 'a');
-        equations[0] = create(33.0d, 55.0d, 's');
-        equations[0] = create(1.0d, 5.0d, 'd');
-        equations[0] = create(123.0d, 874.0d, 'm');
+        equations[1] = create(33.0d, 55.0d, 's');
+        equations[2] = create(1.0d, 5.0d, 'd');
+        equations[3] = create(123.0d, 2.0d, 'm');
 
-        if (opCode == 'w') {
-            handleWhen(parts);
-        } else {
-            char symbol = symbolFromOpCode(opCode);
-            double leftVal = valueFromWord(parts[1]);
-            double rightVal = valueFromWord(parts[2]);
-            double result = execute(opCode, leftVal, rightVal);
-            displayResult(leftVal, symbol, rightVal, result);
+        for (MathEquation equation : equations) {
+            equation.execute();
+            System.out.println("Result: " + equation.result);
         }
+
     }
 
     private static MathEquation create(double leftVal, double rightVal, char opCode) {
@@ -66,13 +64,6 @@ public class Main {
         return equation;
     }
 
-    private static void handleWhen(String[] parts) {
-        LocalDate startDate = LocalDate.parse(parts[1]);
-        long daysToAdd = (long) valueFromWord(parts[2]);
-        LocalDate newDate = startDate.plusDays(daysToAdd);
-        String output = String.format("%s plus %d days is %s", startDate, daysToAdd, newDate);
-        System.out.println(output);
-    }
 
     private static void displayResult(double leftVal, char symbol, double rightVal, double result) {
 
@@ -98,34 +89,6 @@ public class Main {
         }
 
         return symbol;
-    }
-
-    public static double execute(char opCode, double leftVal, double rightVal) {
-
-        double result = 0.0d;
-
-        switch (opCode) {
-            case 'a':
-                result = leftVal + rightVal;
-                break;
-            case 's':
-                result = leftVal - rightVal;
-                break;
-            case 'm':
-                result = leftVal * rightVal;
-                break;
-            case 'd':
-                if (rightVal != 0) {
-                    result = leftVal / rightVal;
-                } else {
-                    result = 0.0d;
-                    System.out.println("Cannot divide by zero.");
-                }
-                break;
-        }
-
-        return result;
-
     }
 
     public static char opCodeFromString(String operationName) {
