@@ -1,9 +1,9 @@
 package com.learning.sandbox;
 
 public class SampleClass {
-    int field1;
-    char field2;
-    String[] field3;
+    private int field1;
+    private char field2;
+    private String[] field3;
 
     public SampleClass(int firstArg, char secondArg, String[] thirdArg) {
 
@@ -36,4 +36,5 @@ public class SampleClass {
     public void setField3(String[] field3) {
         this.field3 = field3.clone();
     }
+
 }
