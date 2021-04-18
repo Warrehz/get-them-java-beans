@@ -44,26 +44,19 @@ public class Main {
     public static void performOperation() {
 
         MathEquation[] equations = new MathEquation[4];
-        equations[0] = create(10.0d, 5.0d, 'a');
-        equations[1] = create(33.0d, 55.0d, 's');
-        equations[2] = create(1.0d, 5.0d, 'd');
-        equations[3] = create(123.0d, 2.0d, 'm');
+        equations[0] = new MathEquation(10.0d, 'a', 5.0d);
+        equations[1] = new MathEquation(33.0d, 's', 55.0d);
+        equations[2] = new MathEquation(1.0d, 'd', 5.0d);
+        equations[3] = new MathEquation(123.0d, 'm', 2.0d);
 
         for (MathEquation equation : equations) {
             equation.execute();
-            System.out.println("Result: " + equation.result);
+            System.out.println("Result: " + equation.getResult());
         }
 
-    }
+        System.out.println("Average of Results: " + MathEquation.getAverageResult());
 
-    private static MathEquation create(double leftVal, double rightVal, char opCode) {
-        MathEquation equation = new MathEquation();
-        equation.leftVal = leftVal;
-        equation.rightVal = rightVal;
-        equation.opCode = opCode;
-        return equation;
     }
-
 
     private static void displayResult(double leftVal, char symbol, double rightVal, double result) {
 

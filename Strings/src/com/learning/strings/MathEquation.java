@@ -1,10 +1,25 @@
 package com.learning.strings;
 
 public class MathEquation {
-    double leftVal;
-    double rightVal;
-    char opCode;
-    double result;
+    private double leftVal;
+    private double rightVal;
+    private char opCode;
+    private double result;
+
+    private static int numberOfCalculations;
+    private static double sumOfResults;
+
+    public MathEquation() {}
+
+    public MathEquation(char opCode) {
+        this.opCode = opCode;
+    }
+
+    public MathEquation(double leftVal, char opCode, double rightVal) {
+        this(opCode);
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+    }
 
     void execute() {
 
@@ -28,5 +43,17 @@ public class MathEquation {
                 break;
         }
 
+        numberOfCalculations++;
+        sumOfResults += result;
+
     }
+
+    public double getResult() {
+        return this.result;
+    }
+
+    public static double getAverageResult() {
+        return sumOfResults / numberOfCalculations;
+    }
+
 }
