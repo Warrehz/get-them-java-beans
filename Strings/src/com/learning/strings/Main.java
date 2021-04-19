@@ -48,6 +48,23 @@ public class Main {
         System.out.println("Overloaded result with automatic conversion for ints: " + equationOverload.getResult());
         System.out.println();
 
+        // using derived classes
+        Divider divider = new Divider();
+        doCalculation(divider, 100.0d, 50.0d);
+        Multiplier multiplier = new Multiplier();
+        doCalculation(multiplier, 3.0d, 2.0d);
+        Subtracter subtracter = new Subtracter();
+        doCalculation(subtracter, 333.0d, 2918.0d);
+        Adder adder = new Adder();
+        doCalculation(adder, 66.0d, 34.0d);
+
+    }
+
+    static void doCalculation(CalculateBase calculation, double leftVal, double rightVal) {
+        calculation.setLeftVal(leftVal);
+        calculation.setRightVal(rightVal);
+        calculation.calculate();
+        System.out.println("Calculation result: " + calculation.getResult());
     }
 
     static void executeInteractively() {
