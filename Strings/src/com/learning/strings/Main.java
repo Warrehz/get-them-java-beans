@@ -32,6 +32,22 @@ public class Main {
         // example using array of custom class type
         performOperation();
 
+        // using execute overloads
+        System.out.println();
+        MathEquation equationOverload = new MathEquation('d');
+        double leftDouble = 9.0d;
+        double rightDouble = 4.0d;
+        equationOverload.execute(leftDouble, rightDouble);
+        System.out.println("Overloaded result with doubles: " + equationOverload.getResult());
+        System.out.println();
+
+        // seeing how automatic conversion works
+        int leftInt = 9;
+        int rightInt = 4;
+        equationOverload.execute(leftInt, rightInt);
+        System.out.println("Overloaded result with automatic conversion for ints: " + equationOverload.getResult());
+        System.out.println();
+
     }
 
     static void executeInteractively() {
