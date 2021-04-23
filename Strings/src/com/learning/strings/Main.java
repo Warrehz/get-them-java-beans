@@ -58,6 +58,26 @@ public class Main {
         Adder adder = new Adder();
         doCalculation(adder, 66.0d, 34.0d);
 
+        // with CalculateBase being abstract
+        performMoreCalculations();
+
+    }
+
+    private static void performMoreCalculations() {
+        CalculateBase[] calculations = {
+                new Divider(10.0d, 2.0d),
+                new Adder(3.0d, 1.0d),
+                new Subtracter(-123.0d, -23.0d),
+                new Multiplier(50.0d, 2.0d)
+        };
+
+        System.out.println();
+        System.out.println("Array calculations");
+
+        for (CalculateBase calculation : calculations) {
+            calculation.calculate();
+            System.out.println("Result: " + calculation.getResult() );
+        }
     }
 
     static void doCalculation(CalculateBase calculation, double leftVal, double rightVal) {
