@@ -63,6 +63,25 @@ public class Main {
 
     }
 
+    private static CalculateBase createCalculation(MathOperation operation, double leftVal, double rightVal) {
+        CalculateBase calculation = null;
+        switch(operation) {
+            case ADD:
+                calculation = new Adder(leftVal, rightVal)
+                break;
+            case SUBTRACT:
+                calculation = new Subtracter(leftVal, rightVal);
+                break;
+            case DIVIDE:
+                calculation = new Divider(leftVal, rightVal);
+                break;
+            case MULTIPLY:
+                calculation = new Multiplier(leftVal, rightVal);
+                break;
+        }
+        return calculation;
+    }
+
     private static void performMoreCalculations() {
         CalculateBase[] calculations = {
                 new Divider(10.0d, 2.0d),
