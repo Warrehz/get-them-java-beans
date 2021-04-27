@@ -1,5 +1,6 @@
 package com.learning.strings;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -61,13 +62,16 @@ public class Main {
         // with CalculateBase being abstract
         performMoreCalculations();
 
+        // running interactively with enums
+        executeInteractively();
+
     }
 
     private static CalculateBase createCalculation(MathOperation operation, double leftVal, double rightVal) {
         CalculateBase calculation = null;
         switch(operation) {
             case ADD:
-                calculation = new Adder(leftVal, rightVal)
+                calculation = new Adder(leftVal, rightVal);
                 break;
             case SUBTRACT:
                 calculation = new Subtracter(leftVal, rightVal);
@@ -111,6 +115,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] parts = userInput.split(" ");
+        performOperation(parts);
+    }
+
+    public static void performOperation(String[] parts) {
+        MathOperation operation = MathOperation.valueOf(parts[0].toUpperCase());
+        double leftVal = Double.parseDouble(parts[1]);
+        double rightVal = Double.parseDouble(parts[2]);
+        CalculateBase calculation = createCalculation(operation, leftVal, rightVal);
+        calculation.calculate();
+        System.out.println("Operation performed: " + operation);
+        System.out.println(calculation.getResult());
+
     }
 
     public static void performOperation() {
