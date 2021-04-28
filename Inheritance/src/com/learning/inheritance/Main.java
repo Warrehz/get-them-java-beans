@@ -1,5 +1,7 @@
 package com.learning.inheritance;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +18,13 @@ public class Main {
         // cargo flight with no specified arguments
         CargoFlight cf01 = new CargoFlight();
 
-
-
+        // interfaces example
+        Passenger[] passengers = {
+                new Passenger("Biscuit", 1, 180),
+                new Passenger("Gravy", 1, 90),
+                new Passenger("Pancakes", 3, 730),
+                new Passenger("Waffles", 2, 150)
+        };
+        Arrays.sort(passengers); // utilizes comparable interface
     }
 }
