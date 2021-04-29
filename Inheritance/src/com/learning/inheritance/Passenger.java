@@ -1,6 +1,6 @@
 package com.learning.inheritance;
 
-public class Passenger implements Comparable {
+public class Passenger implements Comparable<Passenger> {
     private String name;
     private int memberLevel; // 3 (first priority), 2, 1
     private int memberDays;
@@ -14,8 +14,7 @@ public class Passenger implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Passenger p = (Passenger) o;
+    public int compareTo(Passenger p) {
         int returnValue = p.memberLevel - memberLevel;
         return returnValue;
     }
