@@ -25,6 +25,19 @@ public class Main {
                 new Passenger("Pancakes", 3, 730),
                 new Passenger("Waffles", 2, 150)
         };
+
         Arrays.sort(passengers); // utilizes comparable interface
+
+        // multiple interfaces example with comparable and iterator
+        Flight f175 = new Flight(175);
+        f175.add1Passenger(new Passenger("Shalashaska"));
+        f175.add1Passenger(new Passenger("Solid Snake"));
+        f175.add1Passenger(new Passenger("Big Boss"));
+        f175.add1Passenger(new Passenger("Raiden"));
+        for (Passenger p : f175) {
+            System.out.println(p.getName());
+        }
+
+        
     }
 }

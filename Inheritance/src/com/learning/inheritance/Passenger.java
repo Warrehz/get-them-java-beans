@@ -7,10 +7,18 @@ public class Passenger implements Comparable<Passenger> {
 
     public Passenger() {}
 
+    public Passenger(String name) {
+        this.name = name;
+    }
+
     public Passenger(String name, int memberLevel, int memberDays) {
         this.name = name;
         this.memberLevel = memberLevel;
         this.memberDays = memberDays;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
