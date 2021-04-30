@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4500fe37-8b26-42ec-9af2-f45003d7e5cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/inheritance/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/inheritance/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/inheritance/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/inheritance/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/inheritance/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/inheritance/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
