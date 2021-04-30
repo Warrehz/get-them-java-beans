@@ -1,6 +1,5 @@
 package com.learning.strings;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -63,8 +62,23 @@ public class Main {
         performMoreCalculations();
 
         // running interactively with enums
-        executeInteractively();
+        // executeInteractively();
 
+        // running interactively for Adder class that implements interface
+        dynamicInteractively();
+
+    }
+
+    private static void dynamicInteractively() {
+         DynamicHelper helper = new DynamicHelper(new MathProcessing[]{
+                 new Adder()
+         });
+
+         System.out.println("Enter an operation and two numbers:");
+         Scanner scanner = new Scanner(System.in);
+         String userInput = scanner.nextLine();
+
+         helper.process(userInput);
     }
 
     private static CalculateBase createCalculation(MathOperation operation, double leftVal, double rightVal) {
