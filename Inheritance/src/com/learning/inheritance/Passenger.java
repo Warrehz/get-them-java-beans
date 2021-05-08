@@ -2,8 +2,29 @@ package com.learning.inheritance;
 
 public class Passenger implements Comparable<Passenger> {
     private String name;
-    private int memberLevel; // 3 (first priority), 2, 1
-    private int memberDays;
+
+    public static class RewardProgram {
+        private int memberLevel; // 3 (first priority), 2, 1
+        private int memberDays;
+
+        public void setMemberLevel(int memberLevel) {
+            this.memberLevel = memberLevel;
+        }
+
+        public int getMemberLevel() {
+            return memberLevel;
+        }
+
+        public void setMemberDays(int memberDays) {
+            this.memberDays = memberDays;
+        }
+
+        public int getMemberDays() {
+            return memberDays;
+        }
+    }
+
+    private RewardProgram rewardProgram = new RewardProgram();
 
     public Passenger() {}
 
@@ -13,8 +34,8 @@ public class Passenger implements Comparable<Passenger> {
 
     public Passenger(String name, int memberLevel, int memberDays) {
         this.name = name;
-        this.memberLevel = memberLevel;
-        this.memberDays = memberDays;
+        rewardProgram.memberLevel = memberLevel;
+        rewardProgram.memberDays = memberDays;
     }
 
     public String getName() {
@@ -23,7 +44,7 @@ public class Passenger implements Comparable<Passenger> {
 
     @Override
     public int compareTo(Passenger p) {
-        int returnValue = p.memberLevel - memberLevel;
+        int returnValue = p.rewardProgram.memberLevel - rewardProgram.memberLevel;
         return returnValue;
     }
 
