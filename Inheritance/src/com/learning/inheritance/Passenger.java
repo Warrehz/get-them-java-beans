@@ -38,6 +38,10 @@ public class Passenger implements Comparable<Passenger> {
         rewardProgram.memberDays = memberDays;
     }
 
+    public RewardProgram getRewardProgram() {
+        return rewardProgram;
+    }
+
     public String getName() {
         return name;
     }

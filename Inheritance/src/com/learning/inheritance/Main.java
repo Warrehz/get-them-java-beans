@@ -38,6 +38,13 @@ public class Main {
             System.out.println(p.getName());
         }
 
+        Passenger steve = new Passenger("Steve", 3, 180);
+        Passenger.RewardProgram platinium = new Passenger.RewardProgram();
+        platinium.setMemberLevel(3);
+
+        if (steve.getRewardProgram().getMemberLevel() == platinium.getMemberLevel()) {
+            System.out.println("Steve is platinum.");
+        }
 
     }
 }
