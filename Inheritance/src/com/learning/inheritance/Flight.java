@@ -42,10 +42,19 @@ public class Flight implements Comparable<Flight>, Iterable<Passenger> {
     }
 
     public Iterable<Passenger> getOrderedPassengers() {
-        FlightIterable orderedPassengers = new FlightIterable();
-        return orderedPassengers;
+        // returns anonymous class
+        return new Iterable<Passenger>() {
+            @Override
+            public Iterator<Passenger> iterator() {
+                Passenger[] passengers = new Passenger[passengerList.size()];
+                passengerList.toArray(passengers);
+                Arrays.sort(passengers);
+                return Arrays.asList(passengers).iterator();
+            }
+        };
     }
 
+    /*
     private class FlightIterable implements Iterable<Passenger> {
 
         @Override
@@ -55,7 +64,6 @@ public class Flight implements Comparable<Flight>, Iterable<Passenger> {
             Arrays.sort(passengers);
             return Arrays.asList(passengers).iterator();
         }
-
-    }
+    }*/
 
 }
