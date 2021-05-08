@@ -1,6 +1,7 @@
 package com.learning.inheritance;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class Flight implements Comparable<Flight>, Iterable<Passenger> {
@@ -38,6 +39,23 @@ public class Flight implements Comparable<Flight>, Iterable<Passenger> {
 
     public Iterator<Passenger> iterator() {
         return passengerList.iterator();
+    }
+
+    public Iterator<Passenger> getOrderedPassengers() {
+        FlightIterable orderedPassengers = new FlightIterable();
+        return orderedPassengers;
+    }
+
+    private class FlightIterable implements Iterator<Passenger> {
+
+        @Override
+        public Iterator<Passenger> iterator() {
+            Passenger[] passengers = new Passenger[passengerList.size()];
+            passengerList.toArray(passengers);
+            Arrays.sort(passengers);
+            return Arrays.asList(passengers).iterator();
+        }
+
     }
 
 }
