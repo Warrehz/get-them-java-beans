@@ -41,12 +41,12 @@ public class Flight implements Comparable<Flight>, Iterable<Passenger> {
         return passengerList.iterator();
     }
 
-    public Iterator<Passenger> getOrderedPassengers() {
+    public Iterable<Passenger> getOrderedPassengers() {
         FlightIterable orderedPassengers = new FlightIterable();
         return orderedPassengers;
     }
 
-    private class FlightIterable implements Iterator<Passenger> {
+    private class FlightIterable implements Iterable<Passenger> {
 
         @Override
         public Iterator<Passenger> iterator() {

@@ -46,5 +46,17 @@ public class Main {
             System.out.println("Steve is platinum.");
         }
 
+        Flight f185 = new Flight(185);
+        f185.add1Passenger(new Passenger("Iron Man", 1, 180));
+        f185.add1Passenger(new Passenger("Wolverine", 1, 90));
+        f185.add1Passenger(new Passenger("Black Widow", 3, 730));
+        f185.add1Passenger(new Passenger("Doctor Strange", 2, 150));
+
+        for (Passenger p : f185.getOrderedPassengers()) {
+            System.out.println(p.getName());
+        }
+
+
+
     }
 }
