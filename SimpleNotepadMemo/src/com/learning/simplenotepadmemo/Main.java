@@ -1,7 +1,5 @@
 package com.learning.simplenotepadmemo;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -26,17 +24,18 @@ public class Main {
 
         try {
 
-            File file = new File("/Users/warrehz/Desktop/Test1.rtf");
+            File file = new File("/Users/warrehz/Desktop/Test1.txt");
 
             if (!file.exists()) {
                 file.createNewFile();
             }
 
-            FileWriter fileWriter  = new FileWriter(file);
+            FileWriter fileWriter  = new FileWriter(file, true);
 
             bufferedWriter = new BufferedWriter(fileWriter);
 
             bufferedWriter.write(memo);
+            bufferedWriter.newLine();
 
             System.out.println("Successfully wrote to file.");
 
@@ -55,7 +54,6 @@ public class Main {
             }
 
         }
-
 
     }
 }
