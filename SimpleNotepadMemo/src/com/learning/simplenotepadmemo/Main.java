@@ -10,6 +10,12 @@ public class Main {
 
     static void execute() {
 
+        MemoFile memoFile = new MemoFile();
+
+        memoFile.getMemos();
+
+        System.out.println("");
+
         MessageAndInput messageAndInput = new MessageAndInput();
 
         String memo = messageAndInput.ask("What memo would you like to jot down?");

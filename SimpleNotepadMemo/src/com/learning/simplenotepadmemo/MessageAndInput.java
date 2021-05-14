@@ -13,5 +13,4 @@ public class MessageAndInput {
         return answer;
 
     }
-
 }
