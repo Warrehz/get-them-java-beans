@@ -8,13 +8,13 @@ import java.io.IOException;
 
 public class WriteToFile {
 
-    public void appendToFile(String memo) {
+    public void appendToFile(String memo, String filePath) {
 
         BufferedWriter bufferedWriter = null;
 
         try {
 
-            File file = new File("/Users/warrehz/Desktop/Test1.txt");
+            File file = new File(filePath);
 
             if (!file.exists()) {
                 file.createNewFile();

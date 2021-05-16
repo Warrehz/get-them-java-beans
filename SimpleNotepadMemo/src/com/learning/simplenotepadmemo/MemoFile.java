@@ -7,12 +7,21 @@ import java.util.Scanner;
 
 public class MemoFile {
 
+    String filePath;
+
+    public MemoFile() {
+    }
+
+    public MemoFile(String filePath) {
+        this.filePath = filePath;
+    }
+
     public void getMemos() {
 
         ArrayList<String> memos = new ArrayList<String>();
 
         try {
-            File file = new File("/Users/warrehz/Desktop/Test1.txt");
+            File file = new File(filePath);
 
             if (!file.exists()) {
                 file.createNewFile();
@@ -36,5 +45,9 @@ public class MemoFile {
             e.printStackTrace();
         }
 
+    }
+
+    public String getFilePath() {
+        return this.filePath;
     }
 }

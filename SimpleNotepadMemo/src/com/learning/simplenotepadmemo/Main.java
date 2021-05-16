@@ -10,7 +10,7 @@ public class Main {
 
     static void execute() {
 
-        MemoFile memoFile = new MemoFile();
+        MemoFile memoFile = new MemoFile("/Users/warrehz/Desktop/Test1.txt");
 
         memoFile.getMemos();
 
@@ -22,6 +22,6 @@ public class Main {
 
         WriteToFile writeToFile = new WriteToFile();
 
-        writeToFile.appendToFile(memo);
+        writeToFile.appendToFile(memo, memoFile.getFilePath());
     }
 }
