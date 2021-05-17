@@ -10,15 +10,14 @@ public class Main {
 
     static void execute() {
 
-        MemoFile memoFile = new MemoFile("/Users/warrehz/Desktop/Test1.txt");
+
+        String filePath = new MessageAndInput().ask("What is your selected file path?");
+
+        MemoFile memoFile = new MemoFile(filePath);
 
         memoFile.getMemos();
 
-        System.out.println("");
-
-        MessageAndInput messageAndInput = new MessageAndInput();
-
-        String memo = messageAndInput.ask("What memo would you like to jot down?");
+        String memo = new MessageAndInput().ask("What memo would you like to jot down?");
 
         WriteToFile writeToFile = new WriteToFile();
 
