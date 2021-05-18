@@ -18,7 +18,7 @@ public class MemoFile {
 
     public void getMemos() {
 
-        ArrayList<String> memos = new ArrayList<String>();
+        ArrayList<String> memos = new ArrayList<>();
 
         try {
             File file = new File(filePath);

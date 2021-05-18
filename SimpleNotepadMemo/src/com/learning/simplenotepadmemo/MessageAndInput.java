@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class MessageAndInput {
 
     public String ask(String question) {
-
+        String answer = null;
         Scanner scanner = new Scanner(System.in);
         System.out.println(question);
-        String answer = scanner.nextLine();
-        scanner.close();
+        if (scanner.hasNextLine()) {
+            answer = scanner.nextLine();
+        }
         return answer;
-
     }
 }
