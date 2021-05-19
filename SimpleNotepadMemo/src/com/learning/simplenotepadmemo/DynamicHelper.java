@@ -17,13 +17,12 @@ public class DynamicHelper {
 
         ProcessChoiceBase theHandler = null;
         for(ProcessChoiceBase handler : handlers) {
-            if(choice.equalsIgnoreCase(handler.getChoice())) {
+            if(choice.equalsIgnoreCase(handler.getKeyword())) {
                 theHandler = handler;
                 break;
             }
         }
         theHandler.process(filePath);
-        System.out.println("Selection carried out successfully.");
     }
 
 }

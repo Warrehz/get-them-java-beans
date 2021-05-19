@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Viewer extends ProcessChoiceBase {
 
-
     @Override
     public void process(String filePath) {
 

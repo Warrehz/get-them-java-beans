@@ -9,23 +9,28 @@ public class Main {
     }
 
     static void execute() {
-
+        // class to provide message and receive user input
         MessageAndInput messageAndInput = new MessageAndInput();
 
+        // store the user input for file location
         String filePath = messageAndInput.ask("What is your selected file path?");
 
+        // helper that will execute work based on user choice
+        DynamicHelper helper = new DynamicHelper(new ProcessChoiceBase[]{
+                new Viewer()
+        }, filePath);
+
+        // give user a choice of action
         String action = messageAndInput.ask("What would you like to do? Your options are: " +
                 "\n > view memos \n > add memo \n > delete memo \n > close program");
 
+        // execute choice
+        helper.process(action);
 
-        MemoFile memoFile = new MemoFile(filePath);
+        //String memo = messageAndInput.ask("What memo would you like to jot down?");
 
-        memoFile.getMemos();
+        //WriteToFile writeToFile = new WriteToFile();
 
-        String memo = messageAndInput.ask("What memo would you like to jot down?");
-
-        WriteToFile writeToFile = new WriteToFile();
-
-        writeToFile.appendToFile(memo, memoFile.getFilePath());
+        //writeToFile.appendToFile(memo, memoFile.getFilePath());
     }
 }
