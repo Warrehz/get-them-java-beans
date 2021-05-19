@@ -14,6 +14,10 @@ public class Main {
 
         String filePath = messageAndInput.ask("What is your selected file path?");
 
+        String action = messageAndInput.ask("What would you like to do? Your options are: " +
+                "\n > view memos \n > add memo \n > delete memo \n > close program");
+
+
         MemoFile memoFile = new MemoFile(filePath);
 
         memoFile.getMemos();
