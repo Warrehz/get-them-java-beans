@@ -17,7 +17,8 @@ public class Main {
 
         // helper that will execute work based on user choice
         DynamicHelper helper = new DynamicHelper(new ProcessChoiceBase[]{
-                new Viewer()
+                new Viewer(),
+                new Deleter()
         }, filePath);
 
         // give user a choice of action
