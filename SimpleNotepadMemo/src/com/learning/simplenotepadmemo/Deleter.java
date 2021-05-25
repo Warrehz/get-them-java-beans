@@ -1,5 +1,7 @@
 package com.learning.simplenotepadmemo;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.io.File;
@@ -33,7 +35,33 @@ public class Deleter extends ProcessChoiceBase {
                 System.out.println(++index + ": " + memo);
             }
 
-            System.out.println("\nSelect the memo you'd like to delete by entering the memo number:");
+            String answer = new MessageAndInput().ask("\nIndicate the memo # you'd like to delete.");
+
+            int memoNumber = Integer.parseInt(answer);
+            index = 0;
+
+            // loop through memos and delete match
+            for(String memo : memos) {
+                index++;
+                if(memoNumber == index) {
+                    System.out.println(memo);
+                    memos.remove(--index);
+                }
+            }
+
+            // delete old file
+            file.delete();
+
+            File newFile = new File(filePath);
+
+            BufferedWriter bufferedWriter = null;
+            FileWriter fileWriter = new FileWriter(newFile);
+            bufferedWriter = new BufferedWriter(fileWriter);
+
+            for(String memo : memos) {
+                bufferedWriter.write(memo);
+                bufferedWriter.newLine();
+            }
 
 
         } catch(IOException e) {
