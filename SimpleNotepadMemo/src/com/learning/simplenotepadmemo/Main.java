@@ -18,7 +18,8 @@ public class Main {
         // helper that will execute work based on user choice
         DynamicHelper helper = new DynamicHelper(new ProcessChoiceBase[]{
                 new Viewer(),
-                new Deleter()
+                new Deleter(),
+                new Adder()
         }, filePath);
 
         // give user a choice of action
@@ -28,10 +29,5 @@ public class Main {
         // execute choice
         helper.process(action);
 
-        //String memo = messageAndInput.ask("What memo would you like to jot down?");
-
-        //WriteToFile writeToFile = new WriteToFile();
-
-        //writeToFile.appendToFile(memo, memoFile.getFilePath());
     }
 }

@@ -7,7 +7,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.io.File;
 import java.util.Scanner;
-import java.time.LocalTime;
 
 public class Deleter extends ProcessChoiceBase {
 
@@ -68,7 +67,7 @@ public class Deleter extends ProcessChoiceBase {
             }
 
             bufferedWriter.close();
-            
+
         } catch(IOException e) {
             e.printStackTrace();
         }
