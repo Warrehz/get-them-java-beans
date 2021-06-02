@@ -3,9 +3,11 @@ package com.learning.simplenotepadmemo;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.io.File;
 import java.util.Scanner;
+import java.time.LocalTime;
 
 public class Deleter extends ProcessChoiceBase {
 
@@ -38,21 +40,23 @@ public class Deleter extends ProcessChoiceBase {
             String answer = new MessageAndInput().ask("\nIndicate the memo # you'd like to delete.");
 
             int memoNumber = Integer.parseInt(answer);
-            index = 0;
 
-            // loop through memos and delete match
-            for(String memo : memos) {
-                index++;
-                if(memoNumber == index) {
-                    System.out.println(memo);
-                    memos.remove(--index);
-                }
-            }
+            // remove the selected memo
+            memos.remove(--memoNumber);
 
             // delete old file
             file.delete();
 
-            File newFile = new File(filePath);
+            // create localtime
+            LocalTime time = LocalTime.now();
+
+            // append localtime to filepath
+            String newFilePath = filePath.substring(0, filePath.length() - 4) + time + ".txt";
+
+            File newFile = new File(newFilePath);
+
+            // create new file
+            file.createNewFile();
 
             BufferedWriter bufferedWriter = null;
             FileWriter fileWriter = new FileWriter(newFile);
@@ -63,7 +67,8 @@ public class Deleter extends ProcessChoiceBase {
                 bufferedWriter.newLine();
             }
 
-
+            bufferedWriter.close();
+            
         } catch(IOException e) {
             e.printStackTrace();
         }
