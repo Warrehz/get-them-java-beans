@@ -9,6 +9,8 @@ public class Main {
     }
 
     static void execute() {
+        String action = "";
+
         // class to provide message and receive user input
         MessageAndInput messageAndInput = new MessageAndInput();
 
@@ -23,12 +25,13 @@ public class Main {
                 new Closer()
         }, filePath);
 
-        // give user a choice of action
-        String action = messageAndInput.ask("What would you like to do? Your options are: " +
-                "\n > view memos \n > add memo \n > delete memo \n > close program");
+        while (!action.equals("close program")) {
+            // give user a choice of action
+            action = messageAndInput.ask("What would you like to do? Your options are: " +
+                    "\n > view memos \n > add memo \n > delete memo \n > close program");
 
-        // execute choice
-        helper.process(action);
-
+            // execute choice
+            helper.process(action);
+        }
     }
 }
