@@ -10,6 +10,12 @@ public class Main {
         Instant instant = Instant.now();
         System.out.println("Instant: " + instant);
 
+        // a period is a defined set of time
+        Period periodMonth = Period.ofMonths(1);
+        Period periodDays = Period.ofDays(15);
+        System.out.println("Period: " + periodMonth);
+        System.out.println("Period: " + periodDays);
+
         // current date in year-month-day format
         LocalDate localDate = LocalDate.now();
         System.out.println("Local Date: " + localDate);
