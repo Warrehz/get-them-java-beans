@@ -1,7 +1,5 @@
 package com.titlecaseconverter;
 
-import java.util.Locale;
-
 public class TitlecaseConverter {
 
     public static String convertToTitleCase(String input) {
