@@ -1,8 +1,18 @@
 package com.learning.buildingrelationswithjdbc;
 
+import com.learning.buildingrelationswithjdbc.DBConnection;
+
+import java.sql.SQLException;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        try {
+            DBConnection.getConnection();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
+
     }
 }
