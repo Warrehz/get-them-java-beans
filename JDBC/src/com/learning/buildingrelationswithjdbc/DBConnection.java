@@ -5,9 +5,9 @@ import java.sql.*;
 public class DBConnection {
 
     public static void getConnection() throws SQLException{
-        String url = "jdbc:mysql://localhost:3306/";
-        String username = "root";
-        String password = "pluralsight";
+        String url = "";
+        String username = "";
+        String password = "";
         String query = "SELECT * FROM GAME_REVIEW.game";
 
         try {
